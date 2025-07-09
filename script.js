@@ -10,13 +10,13 @@ function qrCodeMaker(qrCodeContent) {
 }
 
 myform.addEventListener('submit', ($event) => {
+    $event.preventDefault();
     if (qrCodeContent.value.length === 0 ) {
         qrCodeContent.classList.add('error')
         setTimeout(() => {
             qrCodeContent.classList.remove("error")
         }, 1000)
     } else {
-        $event.preventDefault();
         qrCodeMaker(qrCodeContent);
         qrImgBox.classList.add("show-image");
         myform.reset();
