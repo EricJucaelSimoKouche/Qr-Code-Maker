@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    background-color: green ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+main {
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Style for the Element in the form */
+#my-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+#my-form #qr-code-content {
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+#my-form input[type="submit"] {
+    background-color: greenyellow;
+    padding: 5px;
+    border: 1px solid ;
+    border-radius: 5px;
+}
+
+/* Style for the div which contains the qrcode image */
+#qr-image-box {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+#qr-image-box.show-image {
+    max-height: 256px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* animation when the input value is empty */
+.error {
+    animation: shake 0.1s linear 10;
+}
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(2px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(-2px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
